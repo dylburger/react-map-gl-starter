@@ -1,10 +1,11 @@
-### react-webpack-starter
+### react-map-gl-starter
 
-This is a simple React / webpack / ES6 starter repository. Often I find myself needing more control over the config files abstracted by `create-react-app`, and wanted to learn how the insides of these build tools work, so created this starter. If you're just getting started with React / webpack, I'd highly encourage you to check out [`create-react-app`](https://github.com/facebookincubator/create-react-app), instead of this.
+This is a simple starter repository for making [`react-map-gl`](https://github.com/uber/react-map-gl) maps.
 
 ## What this includes
 
-* React 16
+* Starter map files in `src/components/maps/`
+* All the `npm` dependencies for `react-map-gl`
 * webpack 3
 * Babel
 * ESLint
