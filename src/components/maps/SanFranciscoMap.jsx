@@ -31,11 +31,35 @@ class SanFranciscoMap extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+    this.resize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
+
+  resize = () => {
+    this.setState({
+      viewport: {
+        ...this.state.viewport,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+    });
+  };
+
+  updateViewport = viewport => {
+    this.setState({viewport});
+  };
+
   render() {
     const {viewport} = this.state;
     return (
       <ReactMapGL
         {...viewport}
+        onViewportChange={this.updateViewport}
         mapboxApiAccessToken={config.mapbox.accessToken}
       />
     );
